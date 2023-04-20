@@ -17,6 +17,12 @@ public class QueryProcessor {
       String[] numbers = query.split(":");
       String[] max = numbers[1].replace("?","").replace(",","").split(" ");
       return Arrays.stream(max).max(Comparator.naturalOrder()).get();
+
+    }else if (query.toLowerCase().contains("plus")) {
+      String[] numbers = query.split("plus");
+      int int1 = Integer.parseInt(numbers[0].replaceAll("[^\\d.]",""));
+      int int2 = Integer.parseInt(numbers[1].replaceAll("[^\\d.]",""));
+      return Integer.toString(int1 + int2);
     } else {
 
       return "";
