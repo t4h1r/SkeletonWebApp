@@ -25,6 +25,16 @@ public class QueryProcessorTest {
   public void knowsAboutTahir() throws Exception {
     assertThat(queryProcessor.process("What is your name?"), containsString("Tahir"));
   }
+
+  @Test
+  public void findMaxValue() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers is the largest: 25, 11, 82?"), is("82"));
+    assertThat(queryProcessor.process("Which of the following numbers is the largest: 25, 64, 24?"), is("64"));
+    assertThat(queryProcessor.process("Which of the following numbers is the largest: 64, 22, 95?"), is("95"));
+
+  }
+
+
 }
 
 
