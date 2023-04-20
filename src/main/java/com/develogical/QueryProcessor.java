@@ -23,7 +23,13 @@ public class QueryProcessor {
       int int1 = Integer.parseInt(numbers[0].replaceAll("[^\\d.]",""));
       int int2 = Integer.parseInt(numbers[1].replaceAll("[^\\d.]",""));
       return Integer.toString(int1 + int2);
-    } else {
+    }else if (query.toLowerCase().contains("multiplied by")) {
+      String[] numbers = query.split("multiplied by");
+      int int1 = Integer.parseInt(numbers[0].replaceAll("[^\\d.]",""));
+      int int2 = Integer.parseInt(numbers[1].replaceAll("[^\\d.]",""));
+      return Integer.toString(int1 * int2);
+    }
+    else {
 
       return "";
     }

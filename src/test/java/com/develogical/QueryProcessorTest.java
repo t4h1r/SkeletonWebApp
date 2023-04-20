@@ -40,6 +40,13 @@ public class QueryProcessorTest {
     assertThat(queryProcessor.process("What is 8 plus 18?"), is("26"));
   }
 
+  @Test
+  public void findMultiplication() throws Exception {
+    assertThat(queryProcessor.process("What is 86 multiplied by 34?"), is("2924"));
+    assertThat(queryProcessor.process("What is 1 multiplied by 3?"), is("3"));
+    assertThat(queryProcessor.process("What is 3 multiplied by 6?"), is("18"));
+  }
+
 
 
 
